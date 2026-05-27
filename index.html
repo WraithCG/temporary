@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Freelance UE5 Blueprint Developer</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:slnt,wdth,wght,CTRS@-2,100,350,17&family=Geom:wght@100;300;600&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body-main theme-royal" data-theme="dark">
+    
+    <div class="loader-screen" id="loader">
+        <div class="loader-content">
+            <div class="loader-code-text">
+                <div class="code-line" data-line="1">Connecting to Client...</div>
+                <div class="code-line" data-line="2">Loading Blueprint Assets...</div>
+                <div class="code-line" data-line="3">Compiling Services...</div>
+                <div class="code-line" data-line="4">Event BeginPlay()</div>
+            </div>
+            <div class="loader-spinner-wrapper">
+                <div class="loader-spinner"></div>
+            </div>
+            <div class="loader-progress-wrapper">
+                <div class="loader-progress-bar"></div>
+            </div>
+            <div class="loader-percentage" id="loaderPercent">0%</div>
+        </div>
+    </div>
+
+    <header class="main-header glass-panel-header" id="header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <span class="logo-bracket">BP_</span>
+                    <span class="logo-text">Freelancer</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#services" class="nav-link" data-section="services">Services</a>
+                <a href="#projects" class="nav-link" data-section="projects">Work</a>
+                <a href="#reviews" class="nav-link" data-section="reviews">Reviews</a>
+                <a href="#contact" class="nav-link" data-section="contact">Hire Me</a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle" title="Toggle Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <div class="code-grid-bg"></div>
+                <div class="floating-particles" id="particles"></div>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    
+                    <div class="status-badge fade-in">
+                        <span class="pulse-dot"></span>
+                        <span id="availabilityStatus">Loading status...</span>
+                    </div>
+                    
+                    <h1 class="hero-name" id="heroName">
+                        <span class="name-prefix">Spawn</span>
+                        <span class="name-operator">&lt;</span>
+                        <span class="name-value">GameDev</span>
+                        <span class="name-suffix">&gt;()</span>
+                    </h1>
+                    
+                    <div class="hero-title">
+                        <span class="title-prefix">//</span>
+                        <span class="title-text">Loading Title...</span>
+                    </div>
+                    
+                    <p class="hero-description">Loading description...</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Discuss Your Project</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>View Portfolio</span>
+                            <i class="fas fa-gamepad"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-social">
+                        <a href="#" class="social-icon discord-link" title="Discord Server"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-icon instagram-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon reddit-link" title="Reddit"><i class="fab fa-reddit-alien"></i></a>
+                        <a href="#" class="social-icon fab-link" title="Fab Marketplace"><i class="fas fa-cube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-container">
+                        <div class="profile-image-glow"></div>
+                        <div class="profile-image-frame">
+                            <div class="profile-image" id="profileImage">
+                                <div class="profile-placeholder">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-1">
+                            <i class="fas fa-bolt"></i>
+                            <div class="badge-content">
+                                <span class="badge-title">Fast Delivery</span>
+                                <span class="badge-libs">Rapid Prototyping</span>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-2">
+                            <i class="fas fa-bug"></i>
+                            <div class="badge-content">
+                                <span class="badge-title">Bug Fixing</span>
+                                <span class="badge-libs">Logic Refactoring</span>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-3">
+                            <i class="fas fa-cogs"></i>
+                            <div class="badge-content">
+                                <span class="badge-title">Custom Systems</span>
+                                <span class="badge-libs">Modular Mechanics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        <span class="title-text">Freelance Overview</span>
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text-wrapper">
+                        <div class="about-intro">
+                            <p class="about-text">Loading about...</p>
+                        </div>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item glass-panel">
+                                <div class="stat-number projects-count" data-count="0">0</div>
+                                <div class="stat-label">Projects Delivered</div>
+                            </div>
+                            <div class="stat-item glass-panel">
+                                <div class="stat-number repeat-clients" data-count="0">0</div>
+                                <div class="stat-label">Repeat Clients</div>
+                            </div>
+                            <div class="stat-item glass-panel">
+                                <div class="stat-number client-rating" data-count="0">0.0</div>
+                                <div class="stat-label">Client Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image-wrapper">
+                        <div class="about-image-container">
+                            <div class="code-block glass-panel">
+                                <div class="code-line">
+                                    <span class="code-keyword">Function</span>
+                                    <span class="code-variable">DeliverProject</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="code-operator">-></span>
+                                    <span class="code-property">Analyze</span>
+                                    <span class="code-bracket">(</span>
+                                    <span class="code-string">"Client Requirements"</span>
+                                    <span class="code-bracket">)</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="code-operator">-></span>
+                                    <span class="code-property">BuildLogic</span>
+                                    <span class="code-bracket">(</span>
+                                    <span class="code-string">"Scalable Blueprints"</span>
+                                    <span class="code-bracket">)</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="code-operator">-></span>
+                                    <span class="code-property">Optimize</span>
+                                    <span class="code-bracket">(</span>
+                                    <span class="code-string">"Performance Profiler"</span>
+                                    <span class="code-bracket">)</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="code-keyword">Return</span>
+                                    <span class="code-variable">Success</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section services-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        <span class="title-text">Services Offered</span>
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="services-grid" id="servicesGrid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        <span class="title-text">Selected Works</span>
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="projects-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="section testimonials-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        <span class="title-text">Client Feedback</span>
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="testimonials-grid" id="testimonialsGrid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        <span class="title-text">Hire Me</span>
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
+                            Looking for a reliable Unreal Engine developer to push your project across the finish line? Let's discuss your requirements, timeline, and budget.
+                        </p>
+                        <div class="contact-item glass-panel">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-label">Email Directly</h4>
+                                <a href="#" class="contact-value contact-email">Loading...</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item glass-panel">
+                            <div class="contact-icon">
+                                <i class="fab fa-discord"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-label">Message on Discord</h4>
+                                <a href="#" class="contact-value discord-dm-link" target="_blank">Send DM</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form glass-panel" id="contactForm" style="padding: 2.5rem;">
+                        <h3 class="form-title">Send a Project Inquiry</h3>
+                        
+                        <input type="hidden" name="access_key" id="web3formsKey" value="">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-input" placeholder="Your Name / Studio" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-input" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" class="form-input" placeholder="Project Type (e.g., Core Mechanics, Bug Fix)" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-input form-textarea" rows="4" placeholder="Briefly describe what you need built..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit" style="width: 100%; justify-content: center;">
+                            <span id="submitText">Submit Inquiry</span>
+                            <i class="fas fa-paper-plane" id="submitIcon"></i>
+                        </button>
+                        <p id="formResult" style="margin-top: 1rem; text-align: center; font-family: var(--font-code); font-size: 0.9rem; display: none;"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer glass-panel-header">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-text-wrapper">
+                    <p class="footer-text">
+                        <span class="footer-copyright">© 2026 Developer Portfolio</span>
+                        <span class="footer-divider">•</span>
+                        <span class="footer-built">Built for Performance</span>
+                    </p>
+                    <p class="footer-author">
+                        <span class="footer-by-text">by</span>
+                        <a href="#" class="footer-author-link">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Kan3an</span>
+                        </a>
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link discord-link" title="Discord Server"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="footer-social-link instagram-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link reddit-link" title="Reddit"><i class="fab fa-reddit-alien"></i></a>
+                    <a href="#" class="footer-social-link fab-link" title="Fab Marketplace"><i class="fas fa-cube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="serviceLightbox">
+        <span class="lightbox-close" onclick="closeLightboxes()">&times;</span>
+        <button class="lightbox-nav lightbox-prev" id="srvNavPrev" title="Previous Service">&#10094;</button>
+        
+        <div class="lightbox-plate glass-panel">
+            <div class="lightbox-media-container" id="srvMediaContainer">
+                <button class="media-nav media-prev" id="srvMediaPrev"><i class="fas fa-chevron-left"></i></button>
+                <div class="lightbox-media" id="srvMedia"></div>
+                <button class="media-nav media-next" id="srvMediaNext"><i class="fas fa-chevron-right"></i></button>
+                <div class="media-dots" id="srvMediaDots"></div>
+            </div>
+            
+            <div class="lightbox-details">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <i class="fas" id="srv-icon" style="font-size: 2rem; color: var(--primary);"></i>
+                    <h2 class="lightbox-title" id="srv-title" style="margin-bottom: 0;"></h2>
+                </div>
+                <div class="lightbox-description" id="srv-desc"></div>
+            </div>
+        </div>
+        
+        <button class="lightbox-nav lightbox-next" id="srvNavNext" title="Next Service">&#10095;</button>
+    </div>
+
+    <div class="lightbox" id="projectLightbox">
+        <span class="lightbox-close" onclick="closeLightboxes()">&times;</span>
+        <button class="lightbox-nav lightbox-prev" id="projNavPrev" title="Previous Project">&#10094;</button>
+        
+        <div class="lightbox-plate glass-panel">
+            <div class="lightbox-media-container" id="projectMediaContainer">
+                <button class="media-nav media-prev" id="projMediaPrev"><i class="fas fa-chevron-left"></i></button>
+                <div class="lightbox-media" id="projectMedia"></div>
+                <button class="media-nav media-next" id="projMediaNext"><i class="fas fa-chevron-right"></i></button>
+                <div class="media-dots" id="projMediaDots"></div>
+            </div>
+            
+            <div class="lightbox-details">
+                <h2 class="lightbox-title" id="proj-title"></h2>
+                
+                <div class="lightbox-meta-header">
+                    <span class="meta-item"><i class="far fa-calendar-alt"></i> <span id="proj-date"></span></span>
+                    <span class="meta-item"><i class="fas fa-user-tag"></i> <span id="proj-role"></span></span>
+                </div>
+                
+                <div class="lightbox-tags" id="proj-tags"></div>
+                <div class="lightbox-description" id="proj-desc"></div>
+                
+                <div id="project-features" class="lightbox-features"></div>
+                
+                <div class="lightbox-actions" id="proj-actions"></div>
+            </div>
+        </div>
+        
+        <button class="lightbox-nav lightbox-next" id="projNavNext" title="Next Project">&#10095;</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
