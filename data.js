@@ -3,7 +3,7 @@ const portfolioData = {
         email: "developer@example.com",
         phone: "+91 000 000 0000",
         location: "Kanpur, Uttar Pradesh, India",
-        web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
+        web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY_HERE", 
         status: "Available for Freelance Work",
         socials: {
             discordServer: "https://discord.gg/yourserver",
@@ -71,16 +71,6 @@ const portfolioData = {
             quote: "We brought him in to fix our frame-rate drops. He identified our heavy tick functions, refactored them to events, and boosted our FPS by 40%. Highly recommended.",
             client: "VR Startup",
             role: "Technical Director"
-        },
-        {
-            quote: "Kan3an delivered the arcade racing controller exactly as requested. The Asphalt 8-style physics feel incredible, and the Blueprints were immaculately organized.",
-            client: "Indie Racing Studio",
-            role: "Project Lead"
-        },
-        {
-            quote: "We brought him in to fix our frame-rate drops. He identified our heavy tick functions, refactored them to events, and boosted our FPS by 40%. Highly recommended.",
-            client: "VR Startup",
-            role: "Technical Director"
         }
     ],
     projects: [
@@ -113,6 +103,29 @@ const portfolioData = {
                 "Metahumans Support",
                 "Demo Main Menu, Pause Menu, Death Menu, Character Selection and Customization Menu",
                 "Example content included for each system"
+            ],
+            links: {
+                live: "https://youtube.com/"
+            }
+        },
+        {
+            title: "Arcade Racing Controller",
+            date: "Jan 2026",
+            role: "Gameplay Programmer",
+            desc: "Developed a highly responsive, Asphalt 8-style arcade racing system in UE5. Replaced rigid simulation physics with custom Chaos Vehicle Blueprint logic for high lateral grip, mid-air control, and dynamic downforce.",
+            tags: ["Unreal Engine 5", "Chaos Vehicles", "Blueprints"],
+            icon: "fa-car",
+            thumbnail: "https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&q=80&w=1000",
+            media: [
+                { type: "image", url: "https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&q=80&w=1000" },
+                { type: "video", url: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" },
+                { type: "image", url: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=1000" }
+            ],
+            features: [
+                "Custom Chaos Vehicle Physics tuning for arcade feel",
+                "Drift initiation and boost mechanics",
+                "Fake downforce implementation for loop-de-loops",
+                "Mid-air pitch and roll control system"
             ],
             links: {
                 live: "https://youtube.com/"

@@ -1,5 +1,5 @@
 const AppState = {
-    currentTheme: 'royal', // Base fallback
+    currentTheme: 'royal', 
     currentSection: 'home',
     isMenuOpen: false,
     isLoaded: false,
@@ -107,20 +107,17 @@ function updateHeaderOnScroll() {
 
 // --- Lightbox Core Functionality ---
 function initLightboxes() {
-    // Background click closing
     document.querySelectorAll('.lightbox').forEach(lb => {
         lb.addEventListener('click', (e) => {
             if (e.target.classList.contains('lightbox')) closeLightboxes();
         });
     });
 
-    // Project Navigation Bindings
     document.getElementById('projNavPrev')?.addEventListener('click', () => navigateProject(-1));
     document.getElementById('projNavNext')?.addEventListener('click', () => navigateProject(1));
     document.getElementById('projMediaPrev')?.addEventListener('click', () => changeProjectMedia(-1));
     document.getElementById('projMediaNext')?.addEventListener('click', () => changeProjectMedia(1));
 
-    // Service Navigation Bindings
     document.getElementById('srvNavPrev')?.addEventListener('click', () => navigateService(-1));
     document.getElementById('srvNavNext')?.addEventListener('click', () => navigateService(1));
     document.getElementById('srvMediaPrev')?.addEventListener('click', () => changeServiceMedia(-1));
@@ -130,12 +127,10 @@ function initLightboxes() {
 function closeLightboxes() {
     document.querySelectorAll('.lightbox').forEach(lb => lb.classList.remove('active'));
     document.body.style.overflow = ''; 
-    // Stop videos
     document.getElementById('projectMedia').innerHTML = '';
     document.getElementById('srvMedia').innerHTML = '';
 }
 
-// Coordinate-based Image Zoom logic
 function handleZoom(e) {
     const img = e.target;
     if (img.classList.contains('zoomed')) {
@@ -305,7 +300,6 @@ function navigateService(dir) {
 function renderDynamicContent() {
     if (typeof portfolioData === 'undefined') return;
 
-    // Personal & Social Links
     if (portfolioData.personal) {
         const socials = portfolioData.personal.socials;
         if (socials) {
@@ -328,12 +322,10 @@ function renderDynamicContent() {
         if (formKey) formKey.value = portfolioData.personal.web3formsKey || "";
     }
     
-    // Text blocks
     if (document.querySelector('.hero-title .title-text')) document.querySelector('.hero-title .title-text').textContent = portfolioData.hero.title;
     if (document.querySelector('.hero-description')) document.querySelector('.hero-description').textContent = portfolioData.hero.description;
     if (document.querySelector('.about-text')) document.querySelector('.about-text').textContent = portfolioData.about.text;
     
-    // Stats
     if (portfolioData.about) {
         const counts = { '.projects-count': 'projectsDelivered', '.repeat-clients': 'repeatClients', '.client-rating': 'clientRating' };
         Object.keys(counts).forEach(selector => {
@@ -342,7 +334,6 @@ function renderDynamicContent() {
         });
     }
 
-    // Services (Click to open Service Lightbox)
     const servicesGrid = document.getElementById('servicesGrid');
     if (servicesGrid && portfolioData.services) {
         servicesGrid.innerHTML = portfolioData.services.map((service, index) => `
@@ -355,7 +346,6 @@ function renderDynamicContent() {
         `).join('');
     }
 
-    // Testimonials
     const testGrid = document.getElementById('testimonialsGrid');
     if (testGrid && portfolioData.testimonials) {
         testGrid.innerHTML = portfolioData.testimonials.map(review => `
@@ -375,7 +365,6 @@ function renderDynamicContent() {
         `).join('');
     }
 
-    // Projects Grid
     const projContainer = document.querySelector('.projects-grid');
     if (projContainer && portfolioData.projects) {
         projContainer.innerHTML = portfolioData.projects.map((proj, index) => `
